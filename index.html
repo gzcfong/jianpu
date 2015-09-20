@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<script src="jquery-1.11.3.min.js"></script>
+<title>jianpu-ly.py 測試紀錄 (MacBookPro)</title>
+<meta charset="UTF-8">
+<style>
+table, th, td {
+border: 1px solid black;
+border-collapse:collapse;
+}
+td {
+align:left;
+vertical-align:top;
+}
+</style>
+</head>
+<body>
+<h2>用 jianpu-ly.py 製作簡譜</h2>
+<!-- ========== 最新狀況 ========== -->
+<h3 id="latest">最新測試結果</h3>
+<ol>
+<li>新增 <a href="#jply006">測試六</a>，並排比較《花心》及《雪花》。</li>
+  <li><small>日期：2015 年 9 月 19 日 星期六</small></li>
+</ol>
+[<a href="#Q_and_S">問題及解法</a>]
+[<a href="#ThisSite">網站日誌</a>]
+<!-- ==========測試紀錄 ========== -->
+<h4 id="test_record">測試紀錄</h4>
+[<a href="#jply001">1. 瑞典狂想曲</a>]
+[<a href="#jply002">2. 原程式範例</a>]
+[<a href="#jply003">3. 簡譜加歌詞《朋友》</a>]
+[<a href="#jply004">4. jl5，簡譜歌詞加五線《木棉道》</a>]
+[<a href="#jply005">5. 反覆記號及二段歌詞《隱形的翅膀》</a>]<br />
+[<a href="#jply006">6. 並排比較《花心》及《雪花》</a>]
+[<a href="#">7. </a>]
+[<a href="#">8. </a>]
+[<a href="#">9. </a>]
+[<a href="#">10.</a>]
+<hr />
+<ol>
+<!-- ==========jply001 ========== -->
+<li id="jply001">測試一（日期： 2015 年 5 月 10 日，曲名：瑞典狂想曲）
+<p>輸入碼：<code>
+q1 \mp s3 s5 s1' s3' s2' s7 q1' q7 4 q6 q5 7, q6 q5 1
+q1 s3 s5 s1' s3' s2' s7 q1' q7 4 q6 q5 q4 q7, 1. s3 s5
+q1' q1' q1' q1' 7. s2 s4 q6 q6 q6 q6 5. q0
+</code></p>
+<p>
+測試結果：OK 
+[<a href="./jpt001ly.txt" target="_blank">.ly</a>]
+[<a href="./jpt001.pdf" target="_blank">.pdf</a>]
+[<a href="./jpt001.mid" target="_blank">.midi</a>]
+</p>
+<img src="jpt001.png" width="700" alt="簡譜測試結果" /><br />
+<audio controls>
+ <source src="./jpt001.mp3" type="audio/mpeg">
+ 這兒是有音樂可聽的，可是您的瀏覽器不支援，
+ 可改用 <a href="http://mozilla.com.tw">firefox</a> 試試
+</audio>
+</li>
+<hr />
+<!-- ==========jply002 ========== -->
+<li id="jply002">測試二（日期：2015 年 5 月 10 日，原程式所附範例）
+<p>輸入碼：<code>
+q1 \mp s3 s5 q1'. sb7 ~ sb7 s6 s4 s#4 5
+</code></p>
+<p>
+測試結果：升降記號未顯示，音樂 OK<br />
+待解問題：升降記號應正常顯示 (已解決，點開以下 pdf 檔即可看到，解法請見 <a href="#Q0001">問題 0001</a>)<br />
+[<a href="./jpt002ly.txt" target="_blank">.ly</a>]
+[<a href="./jpt002.pdf" target="_blank">.pdf</a>]
+[<a href="./jpt002.midi" target="_blank">.midi</a>]
+</p>
+<img src="jpt002.png" alt="jpt002 測試結果，無升降記號" /><br />
+正常的話，應該是這個樣子：<br />
+<img src="jianpu-ly.png" /><br />
+<audio controls>
+ <source src="jpt002.mp3" type="audio/mpeg">
+ 這兒是有音樂可聽的，可是您的瀏覽器不支援，
+ 可改用 <a href="http://mozilla.com.tw">firefox</a> 試試
+</audio>
+<br />
+</li>
+<hr />
+<!-- ==========jply003 ========== -->
+<li id="jply003">測試三（日期：2015 年 7 月 12 日，曲名：朋友）[音符加歌詞]
+<p>輸入碼：<br /><code>
+q2 q3 1 q2 q3 1 q2 q3 5 q5 q6 1 q6, q1 2 q2 q1 6, q6, q1 q2 q3 q2 q1 2 q3 q2 1 q2 q3 1 q2 q3 5 q5 q6 1 q6, q1 2 q2 q1 6, q6, q1 1 - -<br /> 
+L: 這 些 年 一 個 人 風 也 過 雨 也 走 有 過 淚 有 過 錯 還 記 得 堅 持 什 麼 真 愛 過 才 會 懂 會 寂 寞 會 回 首 終 有 夢 終 有 你 在 心 中
+</code></p>
+<p>
+測試結果：音符歌詞對齊 OK<br />
+待解問題：
+<ol>
+<li>三拍應改為二分音符加附點 (暫時以 3 = 2 + 1 的方式解決，點開以下 pdf 檔即可看到，詳情請參考 <a href="#Q0002">問題 0002</a>)</li>
+<li>不需要開頭的 4/4 (待解決，<a href="#Q0003">問題 0003</a>)；</li>
+<li>不需要小節編號 (待解決，<a href="#Q0004">問題 0004</a>)；</li>
+<li>隨心所欲的斷句 (待解決，<a href="#Q0005">問題 0005</a>)；</li>
+</ol>
+[<a href="./jpt003ly.txt" target="_blank">.ly</a>]
+[<a href="jpt003.pdf" target="_blank">.pdf</a>]
+[<a href="jpt003.midi" target="_blank">.midi</a>]
+</p>
+<p>
+<img src="jpt003.png" width="700" alt="jpt003 朋友（含歌詞）" /><br />
+<audio controls>
+ <source src="jpt003.mp3" type="audio/mpeg">
+ 這兒是有音樂可聽的，可是您的瀏覽器不支援，
+ 可改用 <a href="http://mozilla.com.tw">firefox</a> 試試
+</audio>
+</p>
+<p id="jply003_part2">
+後續發展：2015 年 8 月 22 日測試，以「不完全小節」呈現。<br />
+輸入碼（僅加上「4/4,4 」）：<br />
+<code>
+4/4,4 q2 q3 1 q2 q3 1 q2 q3 5 q5 q6 1 q6, q1 2 q2 q1 6, q6, q1 q2 q3 q2 q1 2 q3 q2 1 q2 q3 1 q2 q3 5 q5 q6 1 q6, q1 2 q2 q1 6, q6, q1 1 - ~ 1<br />
+L: 這 些 年 一 個 人 風 也 過 雨 也 走 有 過 淚 有 過 錯 還 記 得 堅 持 什 麼 真 愛 過 才 會 懂 會 寂 寞 會 回 首 終 有 夢 終 有 你 在 心 中
+</code><br />
+<img src="jpt003_2.png" width="700" alt="jpt003 part 2 不完全小節" /><br />
+完整版（全曲簡譜丶歌詞丶五線譜）
+[<a href="jpt003_2_ly.txt" target="_blank">.ly</a>]
+[<a href="jpt003_2.pdf" target="_blank">.pdf</a>]
+[<a href="jpt003_2a.png" target="_blank">.png</a>]
+[<a href="jpt003_2.midi" target="_blank">.midi</a>]
+<audio controls>
+<source src="jpt003_2jp.mp3" type="audio/mpeg">
+ 這兒是有音樂可聽的，可是您的瀏覽器不支援，
+ 可改用 <a href="http://mozilla.com.tw">firefox</a> 試試
+</audio><br />
+<img src="jpt003_2a.png" width="700" alt="jpt003 part 2 jl5 完整版" />
+</p>
+</li>
+<hr />
+<!-- ==========jply004 ========== -->
+<li id="jply004">測試四（日期：2015 年 8 月 15 日，曲名：木棉道）
+<p>輸入碼：<br /><code>
+5 q5 q6 5 q3 q2 3 q3 q2 1. s2 ( s3 ) q2. s1 6,. s6, s6, q1 q3 2 - ~ 2 0 5 q5 q6 5 q3 q2 3 q3 q2 1. s2 ( s3 ) q2. s1 6,. s3 s2 q3 q2 1 - ~ 1 0 1' q2' ( q1' ) 7 q6 q5 6 q6 ( q5 ) 3. s3 s3 q4. q4. q1' 7 s6 q7. 5 - ~ 5 0 1' q2' ( q1' ) 7 q6 q5 6 q6 ( q5 ) 3. s1 s1 q2. q2. q6 5 q3 q2 1 - ~ 1 0 7. q7 7 q3 q7 1'. q7 6 - q7. q7. q7 7 s3 q7. 1' - ~ 1' q0 q6 6. q6 q6 q6 q5 q4 5 - ~ 5 q0 q6 6. q1' 5 q3 q2 1 - ~ 1 0 <br />
+H:紅 紅 的 花 開 滿 了 木 棉 道 長 長 的 街 好 像 在 燃 燒 沈 沈 的 夜 徘 徊 在 木 棉 道 輕 輕 的 風 吹 過 了 樹 梢 木 棉 道 我 怎 能 忘 了 那 是 去 年 夏 天 的 高 潮 木 棉 道 我 怎 能 忘 了 那 是 夢 裏 難 忘 的 波 濤 啊 愛 情 就 像 木 棉 道 季 節 過 去 就 謝 了 愛 情 就 像 那 木 棉 道 蟬 聲 綿 綿 斷 不 了
+</code></p>
+<p>
+測試結果：OK，簡譜的三拍以兩拍加一拍的連音表示，五線譜直接顯示兩拍加附點（附點二分音符）<br />
+待解問題：簡譜也能如五線譜一樣，以附點二分音符表示。
+<br />
+[<a href="./jpt004ly.txt" target="_blank">.ly</a>]
+[<a href="./jpt004.pdf" target="_blank">.pdf</a>]
+[<a href="./jpt004.midi" target="_blank">.midi</a>]
+<audio controls>
+ <source src="jpt004.mp3" type="audio/mpeg">
+ 這兒是有音樂可聽的，可是您的瀏覽器不支援，
+ 可改用 <a href="http://mozilla.com.tw">firefox</a> 試試
+</audio>
+</p>
+<img src="jpt004.png" alt="jpt004 測試結果，簡譜丶歌詞及五線譜" /><br />
+</li>
+<hr />
+<!-- ==========jply005 ========== -->
+<li id="jply005">測試五（日期：2015 年 8 月 30 日，曲名：隱形的翅膀）
+<p>輸入碼：<br /><code>
+4/4,4 q5, q1 R{ 3. q5 3 q3 q2 q1 q1 q1 q6, 5, q5, q1 3. q5 q5 q5 q6 q5 q5 q3 q2 q1 2 q6 q5 3. q5 q5 q5 q6 q5 q3 q2 q1 q2 6, q5, q6, 1. q3 2 3 } A{ 1 - ~ 1 q5, q1 | 1 - ~ 1 q3 q5 } 1'. q1' 7 q6 q5 q6 q1' q3 q2 1 q1 q1 q1 1' q6 q5 q3 q2 q1 2 - ~ 2 q3 q5 1'. q1' 7 q6 q5 q6 q1' q3 q2 1 q1 q1 q1 1' q6 q5 q3 q2 q1 1 - ~ 1 DC q3 q5 1'. q1' 7 q6 q5 q6 q1' q3 q2 1 q1 q1 q1 1' q6 q5 q3 q2 q1 1 - ~ 1 Fine <br />
+L: 每 一 次 都 在 徘 徊 孤 單 中 堅 強 每 一 次 就 算 很 受 傷 也 不 閃 淚 光 我 知 道 我 一 直 有 雙 隱 形 的 翅 膀 帶 我 飛 飛 過 絕 望 不 去<br />
+L: 不 去 想 他 們 擁 有 美 麗 的 太 陽 我 看 見 每 天 的 夕 陽 也 會 有 變 化 我 知 道 我 一 直 有 雙 隱 形 的 翅 膀 帶 我 飛 給 我 希 　 　 　 望 我 終 於 看 到 所 有 夢 想 都 開 花 追 逐 的 年 輕 歌 聲 多 嘹 亮 我 終 於 翱 翔 用 心 凝 望 不 害 怕 哪 裡 會 有 風 就 飛 多 遠 吧 隱 形 的 翅 膀 讓 夢 恆 久 比 天 長 留 一 個 願 望 讓 自 己 想 像
+</code></p>
+<p>測試結果：呈現反覆記號及兩段歌詞，DC al Fine 也 ok。<br />
+待解問題：（<a href="#Q0008">問題八</a>）反覆 R{} A{1|2} 只能用一次，不用出現兩次。<br />
+<audio controls>
+<source src="jpt005jl5.mp3" type="audio/mpeg">
+ 這兒是有音樂可聽的，可是您的瀏覽器不支援，
+ 可改用 <a href="http://mozilla.com.tw">firefox</a> 試試
+</audio>
+[<a href="jpt005jl5_ly.txt" target="_blank">.ly</a>]
+[<a href="jpt005jl5.pdf" target="_blank">.pdf (jl5)</a>]
+[<a href="jpt005jl5.midi" target="_blank">.midi</a>]
+<br />
+<img src="jpt005jp2.png" width="700" alt="隱形的翅膀簡譜" /><br />
+</p>
+</li>
+<hr />
+<!-- ==========jply006 ========== -->
+<li id="jply006">測試六（日期：2015 年 9 月 19 日，曲名：雪花）
+<p>輸入碼：<br /><code>
+略，請直接用 .ly 檔進行測試
+</code></p>
+<p>測試結果：ok，這次把轉音都給「寫」出來，有點兒彆扭。
+[<a href="jpt006_ly.txt" target="_blank">.ly</a>]
+[<a href="jpt006.pdf" target="_blank">.pdf</a>]
+[<a href="jpt006.midi" target="_blank">.midi</a>]
+[<a href="snowflake.html" target="_blank">單曲網頁</a>]
+<br />
+<audio controls>
+<source src="jpt006.m4a" type="audio/mpeg">
+ 這兒是有音樂可聽的，可是您的瀏覽器不支援，
+ 可改用 <a href="http://mozilla.com.tw">firefox</a> 試試
+</audio>(演唱版，要用 #C 調演奏)<br />
+<audio controls>
+<source src="jpt006.mp3" type="audio/mpeg">
+ 這兒是有音樂可聽的，可是您的瀏覽器不支援，
+ 可改用 <a href="http://mozilla.com.tw">firefox</a> 試試
+</audio>(演奏版，用 C 調演奏)<br />
+<img src="jpt006jl.png" width="700" alt="《雪花》簡譜及歌詞" /><br />
+<h4 style="background-color: yellow;">《花心》vs.《雪花》（並排比較）
+[<a href="jpt006vs_ly.txt" target="_blank">.ly</a>]
+[<a href="jpt006vs.pdf" target="_blank">.pdf</a>]
+</h4>
+<img src="jpt006vs1.png" width="700" alt="《花心》vs.《雪花》part 1" /><br>
+<img src="jpt006vs2.png" width="700" alt="《花心》vs.《雪花》part 2" /><br>
+</p>
+</li>
+</ol>
+<!-- ========== 問題及解法 ========== -->
+<h4 id="Q_and_S">問題及解法</h4>
+<table>
+<tr><th>編號</th>
+<th>問題內容</th>
+<th>登錄日期</th>
+<th>狀態、嘗試及結果</th>
+</tr>
+<!-- ========== Q0001 ========== -->
+<tr>
+<td id="Q0001">0001</td>
+<td>升降記號無法呈現，音樂部份 ok</td>
+<td><a href="#jply002">20150510</a></td>
+<td>(20150815) 已解決。請看 <a href="jpt002.pdf" target="_blank">PDF</a>。<br />
+將
+<a href="jianpu-ly_py.txt" target="_blank">jianpu-ly.py</a> %%\remove Staff_symbol_engraver 那行 (第 106 行) uncomment (移掉 %%) 即可</td>
+</tr>
+<!-- ========== Q0002 ========== -->
+<tr>
+<td id="Q0002">0002</td>
+<td>三拍應改為二分音符加附點</td>
+<td><a href="#jply003">20150712</a></td>
+<td>(20150815) 待解決，先以「暫行方案」處理。<br />
+暫行方案：以 2 + 1（兩拍加一拍）替代，如《<a href="#jply004">木棉道</a>》</td>
+</tr>
+<!-- ========== Q0003 ========== -->
+<tr>
+<td id="Q0003">0003</td>
+<td>不需要開頭的 4/4</td>
+<td><a href="#jply003">20150712</a></td>
+<td>
+(20150815) 待解決。<br />
+還沒開始想，但一直想做出 4/4 拍以外的曲子（如 3/4）及不完全小節，却始終不成。需再了解程式碼。<br />
+(20150829) 已可做出不完全小節，請看<a href="#jply003_part2">測試三的後續發展</a>。<br />
+</td>
+</tr>
+<!-- ========== Q0004 ========== -->
+<tr>
+<td id="Q0004">0004</td>
+<td>不需要小節編號</td>
+<td><a href="#jply003">20150712</a></td>
+<td>(20150815) 待解決。<br />
+還沒開始想，但留著也無妨</td>
+</tr>
+<!-- ========== Q0005 ========== -->
+<tr>
+<td id="Q0005">0005</td>
+<td>隨心所欲的斷句</td>
+<td><a href="#jply003">20150712</a></td>
+<td>(20150815) 待解決。<br />
+還沒開始想，想改成隨歌詞斷句，當然，是手動設定。</td>
+</tr>
+<!-- ========== Q0006 ========== -->
+<tr>
+<td id="Q0006">0006</td>
+<td>歌詞搭簡譜，有音高及音長</td>
+<td><a href="#TS20150712">20150712</a></td>
+<td>(20150815) 暫不解決。<br />
+目前已能做出簡譜搭歌詞，有音高及音長，就是不能任意斷句，即前一個問題 (0005)</td>
+</tr>
+<!-- ========== Q0007 ========== -->
+<tr>
+<td id="Q0007">0007</td>
+<td>譜和音樂均可隨選轉調</td>
+<td><a href="#TS20150712">20150712</a></td>
+<td>(20150815) 待解決。<br />
+將用 web page，以 html + javascript 的方式轉碼成 lilypond，目前只有想法，尚無能力</td>
+</tr>
+<!-- ========== Q0008 ========== -->
+<tr>
+<td id="Q0008">0008</td>
+<td>輸入檔之反覆 R{} A{1|2} 只能用一次</td>
+<td><a href="#TS20150830">20150830</a></td>
+<td>(20150830) 待解決。<br />
+歌曲通常都會有同一段旋律搭兩段歌詞，樂譜以反覆配兩段歌詞的方式呈現，例如<a href="#jply005">測試五</a>《隱形的翅膀》，仔結看譜可發現有兩處可用「反覆記號」處理，但譜上只有一處，原因是簡譜輸入檔無法再用 R{} A{1|2} 做第二處的反覆。</td>
+</tr>
+</table>
+<!-- ========== 網站日誌 ========== -->
+<h4 id="ThisSite">網站日誌</h4>
+[原網站：<a href="http://people.ds.cam.ac.uk/ssb22/mwrhome/jianpu-ly.html" target="_blank">Jianpu in Lilypond - Silas S. Brown</a>][原程式碼：<a href="jianpu-ly_py.txt" target="_blank">jianpu-ly.py</a>]
+[測試用程式碼：<a href="jpgf_py.txt" target="_blank">jpgf.py</a>]<br />
+console 執行指令：python jpgf.py < jp > jp.ly <br />
+(將以下測試之「輸入碼」 copy / paste 至文字檔 jp 中，存檔後，在「終端機模式」執行上述指令，可得 jp.ly 輸出檔，將 jp.ly 檔以 lilypond 或  frescobaldi 程式打開，執行後，可得到樂譜的  pdf 及 midi 檔)
+<ul>
+<li id="TS20150712">2015 年 7 月 12 日 星期日
+<ol>
+<li>新增測試紀錄三筆 (
+<a href="#jply001">jply001</a>丶
+<a href="#jply002">jply002</a>丶
+<a href="#jply003">jply003</a>
+)</li>
+<li>升降記號無法呈現，音樂部份 ok。</li>
+<li>簡化指令為 python jpgf.py &lt; jp &gt; jp.ly</li>
+<li>下一步：歌詞搭簡譜，有音高及音長，附音樂。譜和音樂均可隨選轉調。</li>
+</ol>
+</li>
+<li id="TS20150815">2015 年 8 月 15 日 星期日
+<ol>
+<li>新增測試四，<a href="#jply004">jply004</a>，《木棉道》，先以 2 + 1 ( 1 - ~ 1) 表示三拍，不用錯誤的「連續二橫線 ( 1 - - )」</li>
+<li>升降記號無法呈現的問題已解決。請參考「<a href="#Q0001">問題 0001</a>」</li>
+<li>完成 jl5 (簡譜丶歌詞搭五線譜)，有音高及音長，附音樂 (測試四，<a href="#jply004">jply004</a>，《木棉道》)。</li>
+<li>譜和音樂均可隨選轉調待 html5 + javascript 開始時才試。
+</ol>
+</li>
+<li id="TS20150830">2015 年 8 月 30 日 星期日
+<ol>
+<li>解決不完全小節的問題：呈現在<a href="#jply003_part2">測試三的後續發展</a>，但相同的程式，在 Mac OS X (10.7.5) 測試沒問題，在 Windows 7 却無法執行。<br />
+[待確認：在 Mac OS X 產生的 .ly 檔能否在 Windows 7 產生正確的不完全小節]</li>
+<li>新增<a href="#jply005">測試五</a>，首次出現反覆記號丶Da Capo、音樂配合樂譜（之反覆及 Da Capo）。</li>
+</ol>
+</li>
+</ul>
+[<a href="#latest">最新狀況</a>]
+[<a href="#test_record">測試紀錄</a>]
+[<a href="#Q_and_S">問題及解法</a>]
+</body>
+</html>
