@@ -431,14 +431,15 @@
 %\unfoldRepeats
 %<< 
 
-% === BEGIN 5-line STAFF ===
-    \new Staff { \new Voice="5-line" {
+% === BEGIN MIDI STAFF ===
+    \new Staff { \new Voice="midi" {
+      %g4 c'8. c'16 c'8. ( b16 ) c'4 | g4 d'8. d'16 d'8. ( cis'16 ) d'4 | g4 e'4 e'8. dis'16 e'8. f'16 | e'8 ( c'8 ) d'8 ( e'8 ) d'8. d'16 d'8 ( c'8 ) | b4. g8 g'4 g'4 | e'4 c'4 d'4 c'4 | e'8. ( d'16 ) d'4 c'8. ( b16 ) c'8 d'8 | e'8 ( d'8 ) e'8 ( f'8 ) g'2 | g'2 a'4 a'8. a'16 | g'8. ( a'16 ) g'8 ( f'8 ) e'4 ( d'4 ) | c'2 c'4. b8 | a4 a4 a4 gis4 | a4 b4 c'8. b16 d'8. ( b16 ) | e'2 d'4. d'8 | d'4 d'4 e'4 f'4 | e'4 d'4 e'8. c'16 d'8. ( e'16 ) | a2 g8. g16 g8. g16 | c'4. g8 e'4. c'8 | g'4. c'8 d'2 | c'8. ( d'16 ) e'8 ( f'8 ) g'8. ( a'16 ) g'8 ( f'8 ) | e'2. d'4 | c'2. r4
 \relative c'' {
 g c8. c16 c8. ( b16 ) c4 | g4 d'8. d16 d8. ( cis16 ) d4 | g,4 e'4 e8. dis16 e8. f16 | e8 ( c8 ) d8 ( e8 ) d8. d16 d8 ( c8 ) | b4. g8 g'4 g4 | e4 c4 d4 c4 | e8. ( d16 ) d4 c8. ( b16 ) c8 d8 | e8 ( d8 ) e8 ( f8 ) g2 | g2 a4 a8. a16 | g8. ( a16 ) g8 ( f8 ) e4 ( d4 ) | c2 c4. b8 | a4 a4 a4 gis4 | a4 b4 c8. b16 d8. ( b16 ) | e2 d4. d8 | d4 d4 e4 f4 | e4 d4 e8. c16 d8. ( e16 ) | a,2 g8. g16 g8. g16 | c4. g8 e'4. c8 | g'4. c,8 d2 | c8. ( d16 ) e8 ( f8 ) g8. ( a16 ) g8 ( f8 ) | e2. d4 | c2. r4
 }
 } }
-% === END 5-line STAFF ===
+% === END MIDI STAFF ===
+
 >>
 \layout {}
-
 \midi { \context { \Score tempoWholesPerMinute = #(ly:make-moment 124 4)}} }
